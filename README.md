@@ -1,11 +1,3 @@
-This code was tested on Fedora Core 3.
-
-You'll need to have the evolution-data-server-devel RPM installed.
-
-Please see http://revolution.rubyforge.org/ for usage examples.
-
-This code is dual-licensed under GPLv2 and BSD.
-
 Revolution is a Ruby binding for the <a href="http://www.gnome.org/projects/evolution/">Evolution</a> email client.  It's sponsored - i.e., written on work time and open sourced with a BSD license - by <a href="http://infoether.com/">InfoEther</a>.
 
 <h3>Installation</h3>
