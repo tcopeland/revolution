@@ -1,0 +1,33 @@
+Here's how to do the next release:
+
+Update the version number in this file, in www/index.html, and in the Gemspec
+Update CHANGELOG
+Check everything in
+
+CVSROOT=:ext:tom@rubyforge.org:/var/cvs/revolution && export CVSROOT
+cd ~/rubyforge/
+cvs -q tag -D tomorrow "revolution_release_0_5" revolution
+mkdir revolution-0.5
+cp revolution/README revolution-0.5/
+cp revolution/CHANGELOG revolution-0.5/
+cp revolution/LICENSE revolution-0.5/
+cp revolution/extconf.rb revolution-0.5/
+cp revolution/calendar_test.rb revolution-0.5/
+cp revolution/contacts_test.rb revolution-0.5/
+cp revolution/tasks_test.rb revolution-0.5/
+cp revolution/*.c revolution-0.5/
+cp revolution/*.so revolution-0.5/
+cp -r revolution/www/ revolution-0.5/
+zip -q -r revolution-0.5.zip revolution-0.5/
+rm -rf revolution-0.5/
+cd revolution
+gem build revolution.gemspec
+mv revolution-0.5.gem ../
+
+Go to Admin, Edit/Release Files, click on Add new release
+Paste stuff into the changelog/readme boxes
+Add revolution-0.5.zip and revolution-0.5.gem
+
+Upload web site using upload_doc.sh
+
+Submit news on RubyForge, Freshmeat, gnome-announce list

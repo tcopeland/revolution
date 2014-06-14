@@ -1,0 +1,44 @@
+??/??/2005 - 0.6:
+Added Revolution::get_all_contact_uids
+Added Revolution::get_appointments_with_query
+Added Revolution::get_appointment_by_uid
+Added Revolution::add_appointment(rb_appt)
+Added Revolution::delete_appointment(uid)
+Added Revolution::get_appointments_between(start, end)
+Added Revolution::get_all_appointments
+Added Revolution::add_task(rb_task)
+Added Revolution::delete_task(uid)
+Added Revolution::get_all_tasks
+Added Revolution::calendar_to_ical
+Modified get_contact_by_uid to work around Evolution 2.2.2 query bug, more info is here: http://lists.ximian.com/pipermail/evolution-hackers/2005-June/005958.html
+add_appointment() now exports start/end time, summary, organizer
+Appointment now imports the all_day_event field
+Added support for multiple calendars via the ESource mechanism.
+Note that there's a bug for that funky message: http://bugzilla.gnome.org/show_bug.cgi?id=314544
+
+5/6/2005 - 0.5:
+Contacts:
+ add_contact() now exports home/mobile/work phone, organization, title, birthday, multiple work/home/mobile email addresses, AIM Home/Work IM address
+Added new RevolutionException type; methods raise this now rather than returning NULL.
+
+3/30/2005 - 0.4:
+Added mutators to all attributes
+Contacts:
+ Added add_contact, delete_contact, get_contacts_by_name, get_contact_by_uid, get_contacts_with_query
+Added unit test suite for contacts
+
+3/25/2005 - 0.3:
+Added lots of RDoc to document all the exported classes' attributes
+Internal cleanup, removed some unneeded name munging
+Removed unused fields from Contact
+
+3/25/2005 - 0.2:
+Contacts:
+ Implemented RFE 1652; email addresses are now returned as a Hash of Arrays
+ Added fields: birthday, home/mobile/work phone, home/work/other address, organization, title, home/work IM address for AIM/MSN/Jabber/Groupwise/ICQ/Yahoo
+Tasks:
+ Added fields: status, priority
+Cleaned up extconf.rb
+
+3/21/2005 - 0.1
+Initial release; supports basic calendar/contact/task list querying
